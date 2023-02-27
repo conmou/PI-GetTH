@@ -1,0 +1,287 @@
+:root {
+  --blue: linear-gradient(215.21deg, #50647C 12.73%, #4F4E4D 66.22%, #484037 85.32%);
+  /* --white: #EEECEA; */
+  --white: #DBD5D4;
+  --showblue: rgba(0, 0, 0, 0.36); 
+  --showwhile: rgba(255, 255, 255, 0.32);
+  --txtwhite: #8A8B8C;
+  --txtblue: #FFFFFF;
+  --Ltitle: #9F9F9F;
+  --BTtitle: #ebc5aa;
+  --BHtitle: #898DAE;
+  --LTChart: #ebc5aa;
+  --LHChart: #898DAE;
+  --BTChart: #ebc5aa;
+  --BHChart: #B3B8E2;
+}
+
+body.light {
+  --background-color: var(--white);
+  --text-color: var(--txtwhite);
+  --font-weight: 300;
+  --showbg: var(--showwhile);
+  --Ttitle: var(--Ltitle);
+  --Htitle: var(--Ltitle);
+  /* --Timage: url("./image/heat.png");
+  --Himage: url("./image/humidity.png"); */
+  --TChart: var(--BTtitle);
+  --HChart: var(--LHChart);
+  --HYChart: var(--LHChart);
+  --minBtnText: var(--showblue);
+  --minBtnBg: var(--showwhile);
+}
+
+body.dark {
+  --background-color: var(--blue);
+  --text-color: var(--txtblue);
+  --font-weight: 500;
+  --showbg: var(--showblue);
+  --Ttitle: var(--BTtitle);
+  --Htitle: var(--BHtitle);
+  /* --Timage: url("./image/heat.png");
+  --Himage: url("./image/humidity.png"); */
+  --TChart: var(--BTChart);
+  --HChart: var(--BHChart);
+  --HYChart: var(--BHChart);
+  --minBtnText: var(--white);
+  --minBtnBg: var(--showblue);
+}
+#chart{
+  stroke: var(--text-color);
+  stroke-width: 0.7;
+}
+
+#chartX{
+  stroke: var(--text-color);
+  fill: var(--text-color);
+  stroke-width: 0.3;
+}
+
+#chartYt{
+  stroke: var(--TChart);
+  fill: var(--TChart);
+  stroke-width: 1;
+}
+
+#chartYh{
+  stroke: var(--HYChart);
+  fill: var(--HYChart);
+  stroke-width: 1;
+}
+
+/* #chartB{
+  fill: var(--TChart) !important;
+} */
+
+#chartL{
+  stroke: var(--HChart);
+}
+
+#Timg{
+  width: 32%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: background-image 0.7s ease-in-out;
+  background-image: var(--Timage);
+}
+
+#Himg{
+  width: 30%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: background-image 0.7s ease-in-out;
+  background-image: var(--Himage);
+}
+
+.App {
+  text-align: center;
+  padding: 5%;
+  /* background: linear-gradient(215.21deg, #50647C 12.73%, #4F4E4D 66.22%, #484037 85.32%); */
+  min-height: 980px;
+
+  transition: background 0.8s ease-in-out, color 0.8s ease-in-out;
+  background: var(--background-color);
+  color: var(--text-color);
+  font-weight: var(--font-weight);
+  min-width:380px;
+}
+
+.showbg{
+  background: var(--showbg);
+  box-shadow: -26px 26px 34px rgba(3, 3, 3, 0.16);
+  border-radius: 19px;
+  padding: 5%;
+}
+
+.minBtn{
+  padding: 8px 20px;
+  margin: 4px 10px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 5px;
+  border: 0;
+  color: var(--minBtnText);
+  background-color: var(--minBtnBg);
+}
+
+.dayBtn{
+  padding: 8px 20px;
+  font-size:16px;
+  font-weight: 600;
+  border-radius: 5px;
+  border: 0;
+  color: var(--minBtnText);
+  background-color: var(--minBtnBg);
+}
+
+.minTextPart{
+  max-width:360px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dayTextPart{
+  max-width:400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* .Title{
+  background-color: #ffffffe3;
+  color: rgba(0, 0, 0, 0.645);
+  padding: 1%;
+  width: 17%;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 20px;
+  margin:0 auto;
+} */
+
+.hr{
+  /* ----------------酷彩虹---------------- */
+  border: 0;
+  padding: 7px;
+  background: linear-gradient(135deg, red, orange,green, blue, purple);
+  --mask-image: repeating-linear-gradient(135deg, #000 0px, #000 1px, transparent 10px, transparent 5px);
+  -webkit-mask-image: var(--mask-image);
+  mask-image: var(--mask-image);
+  border-radius: 10px;
+}
+
+/* ----------------溫度----------------*/
+.Ttitle{
+  color: var(--Ttitle);
+  font-size: 30px;
+  text-align: right;
+}
+
+.Ttext{
+  /* font-size: 16vmin; */
+  font-size: 80px;
+  color: var(--text-color);
+  border-radius: 10px;
+  padding: 0px 12px;
+}
+
+.Tunit{
+  color: #C2C2C2;
+  font-size: 40px;
+  margin-top: 44px;
+}
+
+/* ----------------濕度---------------- */
+.Htitle{
+  color: var(--Htitle);
+  font-size: 30px;
+  text-align: right;
+}
+
+.Htext{
+  font-size: 80px;
+  color: var(--text-color);
+  border-radius: 10px;
+  padding: 0px 12px;
+}
+
+.Hunit{
+  color: #C2C2C2;
+  font-size: 40px;
+  margin-top: 44px;
+}
+
+/* --------------------------url-------------------------- */
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+}
+
+.content {
+	height: auto;
+  width: auto;
+  /* padding-left: 7%; */
+  margin:0 auto;
+  /* text-align: right; */
+  position: relative;
+}
+
+.content h4 {
+	color: #fff;
+	font-size: 4.2em;
+	position: absolute;
+	transform: translate(16%, -30px);
+  /* text-align:center; */
+}
+
+.content h4:nth-child(1) {
+	color: transparent;
+	-webkit-text-stroke: 2px #F3BE97;
+  /* -webkit-text-stroke: 2px #8338ec; */
+}
+
+.content h4:nth-child(2) {
+	color: #898DAE;
+  /* color: #c19bf5; */
+	animation: animate 4s ease-in-out infinite;
+}
+
+@keyframes animate {
+	0%,
+	100% {
+		clip-path: polygon(
+			0% 45%,
+			16% 44%,
+			33% 50%,
+			54% 60%,
+			70% 61%,
+			84% 59%,
+			100% 52%,
+			100% 100%,
+			0% 100%
+		);
+	}
+
+	50% {
+		clip-path: polygon(
+			0% 60%,
+			15% 65%,
+			34% 66%,
+			51% 62%,
+			67% 50%,
+			84% 45%,
+			100% 46%,
+			100% 100%,
+			0% 100%
+		);
+	}
+}
+
+ResponsiveContainer{
+  width: 60%;
+}
+
